@@ -13,13 +13,18 @@ const degistir= (event) =>{
 }
 
 const arttir=() =>{
+  
   uygula(sayac+Number(count))
-  localStorage.setItem("sayac",sayac+Number(count))
+  // localStorage.setItem("sayac",sayac+Number(count))
 }
 function azalt(){//bu şekilde yazılabiliyor
+
   uygula(sayac-Number(count))
-  localStorage.setItem("sayac",sayac-Number(count))
+  // localStorage.setItem("sayac",sayac-Number(count))
 }
+useEffect(()=>{
+  localStorage.setItem("sayac",sayac);
+},[sayac])
 
   return (
     <div>
