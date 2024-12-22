@@ -1,38 +1,19 @@
-import{
-  useEffect,
-  useState
-}from "react"
-
+import React from "react";
+import Sayma from "./Sayac1.js";
+import { useState } from "react";
 function App() {
 
-const [sayac,uygula]=useState(Number(localStorage.getItem("sayac")))
-const [count,degis]=useState(0)
+  const [count,degis]=useState(0)
 
-const degistir= (event) =>{
-  degis(event.target.value)
-}
-
-const arttir=() =>{
-  
-  uygula(sayac+Number(count))
-  // localStorage.setItem("sayac",sayac+Number(count))
-}
-function azalt(){//bu şekilde yazılabiliyor
-
-  uygula(sayac-Number(count))
-  // localStorage.setItem("sayac",sayac-Number(count))
-}
-useEffect(()=>{
-  localStorage.setItem("sayac",sayac);
-},[sayac])
-
+  const degistir= (event) =>{
+    degis(event.target.value)
+  }
   return (
-    <div>
-      <button onClick={arttir}>+</button>
-      <div>{sayac}</div>
-      <button onClick={azalt}>-</button>
-      <input type="number" id="input" value={count} onChange={degistir} />
-    </div>
+      <div>
+        <input type="number" id="input" value={count} onChange={degistir} />
+        <Sayma sayac1={count}  />    
+      </div>
+    
   );
 }
 

@@ -1,0 +1,10 @@
+button{
+    color: aqua;
+    background-color: rgb(108, 27, 41);
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+input{
+    background-color: burlywood;
+}
